@@ -5,7 +5,7 @@ import userinterface.form;
 
 import java.util.Scanner;
 
-public class bme {
+public class main {
 
     int number;
 
@@ -15,7 +15,7 @@ public class bme {
 
         form form = new form();
         form.userGui();
-        bme bme = new bme();
+        main bme = new main();
 
         System.out.println("Please enter your value to calculate primes and Fibonacci ");
         bme.setNumber(Integer.parseInt(value.nextLine()));
