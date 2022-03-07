@@ -69,13 +69,20 @@ public class form {
                //try and catch method for validation
                try {
                    int number = Integer.parseInt(value.getText());
-                   if(comboBox.getSelectedItem() == "Prime"){
-                       textArea.setText("Prime numbers \n" + prime.values(number));
-                   }else if (comboBox.getSelectedItem() == "Fibonacci"){
-                       textArea.setText("Fibonacci numbers : \n" + fibonaccis.Fibonacci(number));
+                   if(number < 0){
+                       notify.setmsg("Number cannot be less than 0");
+                       notify.errorMsg();
+                       value.setText("");
                    }else {
-                       textArea.setText("Prime numbers \n\n" + prime.values(number) + "\n\n Fibonacci numbers : \n\n" + fibonaccis.Fibonacci(number));
+                       if(comboBox.getSelectedItem() == "Prime"){
+                           textArea.setText("Prime numbers \n" + prime.values(number));
+                       }else if (comboBox.getSelectedItem() == "Fibonacci"){
+                           textArea.setText("Fibonacci numbers : \n" + fibonaccis.Fibonacci(number));
+                       }else {
+                           textArea.setText("Prime numbers \n\n" + prime.values(number) + "\n\n Fibonacci numbers : \n\n" + fibonaccis.Fibonacci(number));
+                       }
                    }
+
                }catch (NumberFormatException exception) {
                    notify.setmsg("Only integer numbers are allowed, Example: 1, 2 , 5");
                    notify.errorMsg();
